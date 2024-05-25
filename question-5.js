@@ -28,7 +28,7 @@ console.log(allTotalProducts);
 function calculateTotalPrice(products,promotionCode) {
   if (promotionCode === "SALE50") {
     return products * (1 - 0.50)
-  } if (promotionCode === "SALE20") {
+  } else if (promotionCode === "SALE20") {
     return products * (1 - 0.20)
   } else {
     return products
