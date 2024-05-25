@@ -19,6 +19,27 @@ const products = [
 
 const promotionCode = "";
 // เริ่มเขียนโค้ดตรงนี้
+let allTotalProducts = products.reduce((arr,products)=> {
+  return arr + (products.price * products.quantity);
+},0)
+
+console.log(allTotalProducts);
+
+function calculateTotalPrice(products,promotionCode) {
+  if (promotionCode === "SALE50") {
+    return products * (1 - 0.50)
+  } if (promotionCode === "SALE20") {
+    return products * (1 - 0.20)
+  } else {
+    return products
+  }
+}
+console.log(calculateTotalPrice(85,"SALE50"));
+
+
+console.log(calculateTotalPrice(allTotalProducts,"SALE50"));
+console.log(calculateTotalPrice(allTotalProducts,"SALE20"));
+console.log(calculateTotalPrice(allTotalProducts,""));
 
 
 // ทำไม่ทันครับแต่ที่คิดเอาไว้คืือการเอา reduce มาหาผลรวมของสินค้าก่อน อ้างจากข้อ 2 ครับถ้าไม่ใช้ reduce จะเขียนยาวมากๆ
